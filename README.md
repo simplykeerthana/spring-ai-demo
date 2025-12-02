@@ -17,7 +17,7 @@ ollama serve
 
 ### 2. Clone & Build
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/simplykeerthana/spring-ai-demo.git
 cd spring-ai-demo
 mvn clean package
 ```
@@ -96,7 +96,7 @@ curl -X DELETE "http://localhost:8080/api/chatclient/conversation/user-123"
 - **5 Controllers**: Each demonstrating a different AI pattern
 - **3 Services**: Weather mock service + RAG vector store operations
 - **3 Models**: Type-safe POJOs (Weather, Book, Recipe)
-- **18+ API Endpoints**: Full coverage of Spring AI capabilities
+- **18+ API Endpoints**: coverage of Spring AI capabilities
 
 ## Prerequisites
 
@@ -104,13 +104,8 @@ curl -X DELETE "http://localhost:8080/api/chatclient/conversation/user-123"
 - **Maven 3.6+**
 - **Ollama** (with `llama3.2` and `nomic-embed-text` models)
 
-## 🩺 Health Check
-```bash
-curl http://localhost:8080/actuator/health
-# Expected: {"status":"UP"}
-```
 
-## 🐛 Common Issues
+##  Common Issues
 
 **"Connection refused" error?**
 → Start Ollama: `ollama serve`
@@ -126,14 +121,13 @@ curl http://localhost:8080/actuator/health
 
 ## Real-World Use Cases
 
-- 💬 Chatbots & customer support
-- 📝 Content generation (blogs, summaries)
-- 📚 Document analysis & search
-- 🔍 Data extraction & classification
-- 🔐 Cybersecurity vulnerability management
-- 🤖 Intelligent automation
+1.  Chatbots & customer support
+2.  Content generation (blogs, summaries)
+3.  Document analysis & search
+4.  Data extraction & classification
+  
 
-## 📖 Learn More
+## Learn More
 
 - [Spring AI Docs](https://docs.spring.io/spring-ai/reference/)
 - [Ollama Docs](https://ollama.ai/)
@@ -147,7 +141,7 @@ Found this demo helpful? Consider buying me a coffee!
 
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Support-yellow?style=for-the-badge&logo=buy-me-a-coffee)](https://buymeacoffee.com/simplykeerthana)
 
-Your support helps me create more open-source tutorials and demos! 🚀
+Your support helps me create more open-source tutorials and demos! 
 
 ---
 
