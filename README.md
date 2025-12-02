@@ -19,13 +19,20 @@ ollama serve
 ```bash
 git clone https://github.com/simplykeerthana/spring-ai-demo.git
 cd spring-ai-demo
+# Build the project (creates the JAR file)
 mvn clean package
 ```
 
+
 ### 3. Run the App
 ```bash
+# Option 1: Run with Maven (easiest)
+mvn spring-boot:run
+
+# Option 2: Run the generated JAR
 java -jar target/spring-ai-demo-0.0.1-SNAPSHOT.jar
 ```
+
 
 App starts at: `http://localhost:8080`
 
