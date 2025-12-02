@@ -1,0 +1,397 @@
+{
+  "info": {
+    "name": "Spring AI Demo API",
+    "description": "Comprehensive Spring AI API collection with examples for Chat, Structured Output, Function Calling, RAG, and ChatClient",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Chat Completion",
+      "item": [
+        {
+          "name": "Simple Chat",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/chat/simple?message=Tell me a joke about programming",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "chat", "simple"],
+              "query": [
+                {
+                  "key": "message",
+                  "value": "Tell me a joke about programming"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Chat with System Prompt",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"message\": \"Explain microservices architecture\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/chat/system",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "chat", "system"]
+            }
+          }
+        },
+        {
+          "name": "Streaming Chat",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/chat/stream?message=Write a haiku about artificial intelligence",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "chat", "stream"],
+              "query": [
+                {
+                  "key": "message",
+                  "value": "Write a haiku about artificial intelligence"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Conversation with Context",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messages\": [\n    \"I'm building a REST API\",\n    \"Should I use Spring Boot?\",\n    \"What dependencies do I need?\"\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/chat/conversation",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "chat", "conversation"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Structured Output",
+      "item": [
+        {
+          "name": "Get Weather",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/structured/weather?city=San Francisco",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "structured", "weather"],
+              "query": [
+                {
+                  "key": "city",
+                  "value": "San Francisco"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Book Recommendations",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/structured/books?genre=science fiction&count=3",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "structured", "books"],
+              "query": [
+                {
+                  "key": "genre",
+                  "value": "science fiction"
+                },
+                {
+                  "key": "count",
+                  "value": "3"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Recipe",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/structured/recipe?dish=spaghetti carbonara",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "structured", "recipe"],
+              "query": [
+                {
+                  "key": "dish",
+                  "value": "spaghetti carbonara"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Function Calling",
+      "item": [
+        {
+          "name": "Weather Function Call",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/functions/weather?question=What's the weather like in Tokyo right now?",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "functions", "weather"],
+              "query": [
+                {
+                  "key": "question",
+                  "value": "What's the weather like in Tokyo right now?"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Smart Assistant (Calculator)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/functions/assistant?question=Calculate 20% tip on a $85 restaurant bill",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "functions", "assistant"],
+              "query": [
+                {
+                  "key": "question",
+                  "value": "Calculate 20% tip on a $85 restaurant bill"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. RAG - Document Q&A",
+      "item": [
+        {
+          "name": "Add Content to Knowledge Base",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Spring AI Overview\",\n  \"content\": \"Spring AI is a framework that streamlines the development of AI applications in Java. It provides abstractions for chat models, embeddings, vector stores, and function calling. Spring AI supports multiple providers including OpenAI, Anthropic, Azure, Google, Amazon, and Ollama. Key features include portable APIs across providers, structured output conversion to POJOs, RAG capabilities with vector databases, and observability for AI operations.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/rag/add",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "rag", "add"]
+            }
+          }
+        },
+        {
+          "name": "Query Knowledge Base",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/rag/query?question=What providers does Spring AI support?",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "rag", "query"],
+              "query": [
+                {
+                  "key": "question",
+                  "value": "What providers does Spring AI support?"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Upload Document",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "test-documents/spring-framework.txt"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/rag/upload",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "rag", "upload"]
+            }
+          }
+        },
+        {
+          "name": "Clear Knowledge Base",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/rag/clear",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "rag", "clear"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "5. ChatClient API",
+      "item": [
+        {
+          "name": "Simple Ask",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/chatclient/ask?question=What is dependency injection?",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "chatclient", "ask"],
+              "query": [
+                {
+                  "key": "question",
+                  "value": "What is dependency injection?"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Assistant with Role",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"role\": \"Database expert\",\n  \"question\": \"Explain ACID properties\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/chatclient/assistant",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "chatclient", "assistant"]
+            }
+          }
+        },
+        {
+          "name": "Conversation with Memory (First Message)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"conversationId\": \"user-alice-123\",\n  \"message\": \"My name is Alice and I'm learning Spring Boot\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/chatclient/conversation",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "chatclient", "conversation"]
+            }
+          }
+        },
+        {
+          "name": "Conversation with Memory (Follow-up)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"conversationId\": \"user-alice-123\",\n  \"message\": \"What did I say my name was?\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/chatclient/conversation",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "chatclient", "conversation"]
+            }
+          }
+        },
+        {
+          "name": "Clear Conversation",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/chatclient/conversation/user-alice-123",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "chatclient", "conversation", "user-alice-123"]
+            }
+          }
+        },
+        {
+          "name": "Streaming Response",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/chatclient/stream?question=Write a short story about a developer",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "chatclient", "stream"],
+              "query": [
+                {
+                  "key": "question",
+                  "value": "Write a short story about a developer"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ]
+}

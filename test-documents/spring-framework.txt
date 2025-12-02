@@ -1,0 +1,46 @@
+# Test Document: Spring Framework Overview
+
+Spring Framework is a comprehensive programming and configuration model for modern Java-based enterprise applications. It was created by Rod Johnson and first released in 2003.
+
+## Core Features
+
+### Dependency Injection
+Spring's core container provides dependency injection (DI) functionality. DI is a design pattern that removes dependencies from your code, making it easier to test and maintain.
+
+### Aspect-Oriented Programming (AOP)
+Spring AOP enables modularization of cross-cutting concerns. Examples include logging, security, and transaction management.
+
+### Spring MVC
+Spring MVC is a web framework that follows the Model-View-Controller design pattern. It provides a clean separation between domain model code and web forms.
+
+### Data Access
+Spring provides excellent support for data access frameworks including JDBC, JPA, and Hibernate. It simplifies database operations and exception handling.
+
+### Transaction Management
+Spring Framework provides a consistent abstraction for transaction management that scales down to local transactions and scales up to global transactions (JTA).
+
+## Spring Boot
+
+Spring Boot was introduced in 2014 to simplify Spring application development. It provides:
+- Auto-configuration
+- Standalone applications
+- Embedded servers (Tomcat, Jetty)
+- Production-ready features
+- No code generation or XML configuration required
+
+## Spring Ecosystem
+
+The Spring ecosystem includes:
+- Spring Data: Simplifies data access
+- Spring Security: Authentication and authorization
+- Spring Cloud: Microservices infrastructure
+- Spring Batch: Batch processing framework
+- Spring Integration: Enterprise integration patterns
+
+## Why Choose Spring?
+
+1. **Mature and Stable**: Over 20 years of development
+2. **Large Community**: Extensive documentation and support
+3. **Enterprise Ready**: Used by major corporations worldwide
+4. **Flexible**: Works with various architectures and technologies
+5. **Open Source**: Free to use with active development
